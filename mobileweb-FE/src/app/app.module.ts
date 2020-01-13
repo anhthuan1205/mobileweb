@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListBankComponent } from './list-bank/list-bank.component';
 import { BankUsageAgreementComponent } from './bank-usage-agreement/bank-usage-agreement.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BankUsageAgreementComponent } from './bank-usage-agreement/bank-usage-a
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

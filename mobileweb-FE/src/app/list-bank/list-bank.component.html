@@ -1,1 +1,10 @@
-<p>list-bank works!</p>
+<h3>Target Institution</h3>
+<p>{{message}}</p>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of banks; index as i">
+      <p>{{ item.name }}</p>
+    </div>
+    <div *ngIf="!banks"><h3>Danh sách rỗng</h3></div>
+  </div>
+</div>
