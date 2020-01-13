@@ -3,5 +3,6 @@ var router = express.Router();
 var bankController = require('../controller/BankController');
 
 router.get('/allbanks', bankController.getAllBanks);
+router.get('/bank/:id', bankController.getBankUsageAgreement);
 
 module.exports = router;
