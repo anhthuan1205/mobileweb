@@ -1,15 +1,17 @@
 var con = require('../config/Database');
+var logger = require('../config/Logger');
 
 exports.getAllBanks = function(req, res) {
     var sql = 'SELECT * FROM mobileweb.banks';
+    logger.info(sql);
     con.query(sql, function(err, result) {
         if (err) {
-            console.log(err);
+            logger.error(err);
             res.status(404).json({
                 'msg': err
             });
         } else {
-            console.log("select all banks success.");
+            logger.info("select all banks success.");
             return res.status(200).send(result);
         }
     });
@@ -17,15 +19,16 @@ exports.getAllBanks = function(req, res) {
 
 exports.getBankUsageAgreement = function(req, res) {
     var id = req.params.id;
+    logger.info("Request param id: " + id);
     var sql = 'SELECT * FROM mobileweb.bank_usage_agreements WHERE id=' + id;
     con.query(sql, function(err, result) {
         if (err) {
-            console.log(err);
+            logger.error(err);
             res.status(404).json({
                 'msg': err
             });
         } else {
-            console.log("select bank usage agreement success.");
+            logger.info("select bank usage agreement success.");
             return res.status(200).send(result);
         }
     })
