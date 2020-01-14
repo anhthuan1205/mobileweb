@@ -1,7 +1,8 @@
 var con = require('../config/Database');
 
 exports.getAllBanks = function(req, res) {
-    con.query('SELECT * FROM mobileweb.banks', function(err, result) {
+    var sql = 'SELECT * FROM mobileweb.banks';
+    con.query(sql, function(err, result) {
         if (err) {
             console.log(err);
             res.status(404).json({
@@ -9,8 +10,8 @@ exports.getAllBanks = function(req, res) {
             });
         } else {
             console.log("select all banks success.");
-            res.status(200).send(result);
-        };
+            return res.status(200).send(result);
+        }
     });
 };
 
@@ -25,7 +26,7 @@ exports.getBankUsageAgreement = function(req, res) {
             });
         } else {
             console.log("select bank usage agreement success.");
-            res.status(200).send(result);
-        };
+            return res.status(200).send(result);
+        }
     })
 };
