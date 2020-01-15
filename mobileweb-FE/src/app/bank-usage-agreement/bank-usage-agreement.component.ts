@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {IBankUsageAgreement} from '../interface/i-bankUsageAgreement';
+import {BankService} from '../service/bank.service';
+import {StorageService} from '../service/storage.service';
 
 @Component({
   selector: 'app-bank-usage-agreement',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bank-usage-agreement.component.scss']
 })
 export class BankUsageAgreementComponent implements OnInit {
+  usageAgreement: IBankUsageAgreement;
+  message: string;
 
-  constructor() { }
+  constructor(private bankService: BankService,
+              private storageService: StorageService) { }
 
   ngOnInit() {
+    const bankId = this.storageService.getBankId();
+    this.bankService.getBankUsageAgreement(bankId).subscribe( next => {
+      this.usageAgreement = next;
+      console.log(typeof(next.information_collection));
+      console.log(next);
+    }, error => {
+      this.message = error.error.msg;
+    } );
   }
 
 }
