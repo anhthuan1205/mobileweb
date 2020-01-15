@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IBank } from '../interface/i-bank';
-import { BankService } from '../service/bank.service';
+import { BankService } from '../service/bank.service'
+import { StorageService } from '../service/storage.service';
 
 @Component({
   selector: 'app-list-bank',
@@ -10,8 +11,10 @@ import { BankService } from '../service/bank.service';
 export class ListBankComponent implements OnInit {
   banks: IBank[];
   message: string;
+  result = {id: '1'};
 
-  constructor(private bankService: BankService) { }
+  constructor(private bankService: BankService,
+              private storageService: StorageService) { }
 
   ngOnInit() {
     this.bankService.getAllBanks().subscribe(next => {
@@ -22,4 +25,8 @@ export class ListBankComponent implements OnInit {
     } );
   }
 
+  onSubmit() {
+    this.storageService.saveBankId(this.result.id);
+    return JSON.stringify(this.result);
+  }
 }
