@@ -3,4 +3,5 @@ export interface IBankUsageAgreement {
   information_collection: string;
   information_usage: string;
   information_share: string;
+  bank_id: number;
 }
