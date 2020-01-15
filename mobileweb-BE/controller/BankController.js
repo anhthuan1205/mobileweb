@@ -20,7 +20,7 @@ exports.getAllBanks = function(req, res) {
 exports.getBankUsageAgreement = function(req, res) {
     var id = req.params.id;
     logger.info("Request param id: " + id);
-    var sql = 'SELECT * FROM mobileweb.bank_usage_agreements WHERE id=' + id;
+    var sql = 'SELECT * FROM mobileweb.bank_usage_agreements WHERE bank_id=' + id;
     con.query(sql, function(err, result) {
         if (err) {
             logger.error(err);
@@ -29,7 +29,7 @@ exports.getBankUsageAgreement = function(req, res) {
             });
         } else {
             logger.info("select bank usage agreement success.");
-            return res.status(200).send(result);
+            return res.status(200).send(result[0]);
         }
     })
 };

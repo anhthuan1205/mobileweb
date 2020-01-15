@@ -2,7 +2,7 @@ var express = require('express');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var banks = require('./route/BankRoute');
-var logger = require('./config/logger');
+var logger = require('./config/Logger');
 
 const port = 3000;
 
