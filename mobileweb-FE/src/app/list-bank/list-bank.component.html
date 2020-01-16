@@ -4,7 +4,7 @@
   <input type="radio" name="bank" [(ngModel)]="result.id" [value]="item.id">{{ item.name }}
 </div>
 <div *ngIf="!banks"><h3>Danh sách rỗng</h3></div>
-  <a routerLink="/share-information">Next</a>
+  <button routerLink="/share-information">Next</button>
 
 <div>{{ onSubmit() | json}}
 </div>

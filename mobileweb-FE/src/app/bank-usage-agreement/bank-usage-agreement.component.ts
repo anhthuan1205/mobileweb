@@ -11,6 +11,7 @@ import {StorageService} from '../service/storage.service';
 export class BankUsageAgreementComponent implements OnInit {
   usageAgreement: IBankUsageAgreement;
   message: string;
+  theCheckbox: false;
 
   constructor(private bankService: BankService,
               private storageService: StorageService) { }
@@ -26,4 +27,7 @@ export class BankUsageAgreementComponent implements OnInit {
     } );
   }
 
+  none() {
+    return !this.theCheckbox;
+  }
 }

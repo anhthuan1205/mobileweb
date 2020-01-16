@@ -1,6 +1,30 @@
-<a routerLink="/share-information">Back</a>
+<button routerLink="/share-information">Back</button> Consent of data collection and using
 <app-information></app-information>
-<p>{{ usageAgreement?.information_collection }}</p>
-<p>{{ usageAgreement?.information_share }}</p>
-<p>{{ usageAgreement?.information_usage }}</p>
-<a routerLink="/login-cic">Next</a>
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Consent of data collection <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><p>{{ usageAgreement?.information_collection }}</p></li>
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Consent of data using <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><p>{{ usageAgreement?.information_share }}</p></li>
+  </ul>
+</div>
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Consent of data providing <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><p>{{ usageAgreement?.information_usage }}</p></li>
+  </ul>
+</div><br/>
+<label class="container">
+  <input type="checkbox" [(ngModel)]="theCheckbox"/> Agree to all of them
+</label><br/>
+<button [disabled]="none()" routerLink="/login-cic">Next</button>
