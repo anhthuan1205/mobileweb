@@ -1,30 +1,40 @@
-<button routerLink="/share-information">Back</button> Consent of data collection and using
+<button class="btn btn-outline-primary" routerLink="/share-information">Back</button>
+<div class="body-title">Consent of data collection and using</div>
 <app-information></app-information>
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Consent of data collection <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><p>{{ usageAgreement?.information_collection }}</p></li>
-  </ul>
+<hr>
+<div class="container-fluid">
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">Consent of data collection</button>
+      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><p>{{ usageAgreement?.information_collection }}</p></li>
+      </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">Consent of data using</button>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><p>{{ usageAgreement?.information_share }}</p></li>
+    </ul>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="btn btn-default">Consent of data providing</button>
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+      <li><p>{{ usageAgreement?.information_usage }}</p></li>
+    </ul>
+  </div>
+  <br/>
 </div>
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Consent of data using <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><p>{{ usageAgreement?.information_share }}</p></li>
-  </ul>
-</div>
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Consent of data providing <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><p>{{ usageAgreement?.information_usage }}</p></li>
-  </ul>
-</div><br/>
 <label class="container">
   <input type="checkbox" [(ngModel)]="theCheckbox"/> Agree to all of them
 </label><br/>
-<button [disabled]="none()" routerLink="/login-cic">Next</button>
+<div class="but">
+  <button class="btn btn-outline-primary" [disabled]="none()" routerLink="/login-cic">Next</button>
+</div>
