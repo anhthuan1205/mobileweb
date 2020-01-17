@@ -1,0 +1,19 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-style: italic;
+  font-family: KacstOffice, serif;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: cornflowerblue;
+  z-index: 1;
+}
+
+.header-logo {
+  font-size: small;
+  text-align: center;
+  margin-left: -100px;
+}

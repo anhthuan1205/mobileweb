@@ -12,6 +12,8 @@ import { ShareInformationComponent } from './share-information/share-information
 import { CicLoginComponent } from './cic-login/cic-login.component';
 import { InformationComponent } from './share-information/information/information.component';
 import { ShareComponent } from './share-information/share/share.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ShareComponent } from './share-information/share/share.component';
     ShareInformationComponent,
     CicLoginComponent,
     InformationComponent,
-    ShareComponent
+    ShareComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
