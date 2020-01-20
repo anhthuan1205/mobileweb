@@ -1,0 +1,22 @@
+<button class="btn btn-outline-primary" routerLink="/login-cic">Back</button>
+<div class="body-title">Inquiry Result</div>
+<hr>
+<div id="tab">
+  <table border="1">
+    <tr>
+      <td class="td1"></td>
+      <td class="td2">Target information</td>
+      <td class="td3">Result</td>
+    </tr>
+    <tr>
+      <td class="td1"><input type="checkbox" [(ngModel)]="theCheckbox"/></td>
+      <td class="td2">CIC Credit Report</td>
+      <td class="td3">Done</td>
+    </tr>
+  </table>
+</div>
+<br>
+<div class="but">
+  <button class="btn btn-outline-primary" [disabled]="check()" (click)="submit()">Submit</button>&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-outline-primary" (click)="end()">End</button>
+</div>

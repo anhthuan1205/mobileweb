@@ -43,7 +43,7 @@ export class CicLoginComponent implements OnInit {
           this.tokenStorage.saveToken(next.token);
           this.message = next.msg;
 
-          this.router.navigate(['home']);
+          this.router.navigate(['inquiry-result']);
         }, error => {
           this.message = error.error.msg;
         });

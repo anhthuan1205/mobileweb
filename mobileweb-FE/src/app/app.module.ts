@@ -15,6 +15,7 @@ import { ShareComponent } from './share-information/share/share.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import {httpInterceptorProviders} from './auth/auth-interceptor';
+import { InquiryResultComponent } from './inquiry-result/inquiry-result.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {httpInterceptorProviders} from './auth/auth-interceptor';
     InformationComponent,
     ShareComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    InquiryResultComponent
   ],
   imports: [
     BrowserModule,

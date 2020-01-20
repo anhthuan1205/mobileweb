@@ -4,6 +4,7 @@ import {ListBankComponent} from './list-bank/list-bank.component';
 import {ShareInformationComponent} from './share-information/share-information.component';
 import {CicLoginComponent} from './cic-login/cic-login.component';
 import {BankUsageAgreementComponent} from './bank-usage-agreement/bank-usage-agreement.component';
+import {InquiryResultComponent} from './inquiry-result/inquiry-result.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'login-cic',
     component: CicLoginComponent
+  },
+  {
+    path: 'inquiry-result',
+    component: InquiryResultComponent
   }
 ];
 
