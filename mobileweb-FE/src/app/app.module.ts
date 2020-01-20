@@ -14,6 +14,7 @@ import { InformationComponent } from './share-information/information/informatio
 import { ShareComponent } from './share-information/share/share.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import {httpInterceptorProviders} from './auth/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { HeaderComponent } from './header/header.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule {
