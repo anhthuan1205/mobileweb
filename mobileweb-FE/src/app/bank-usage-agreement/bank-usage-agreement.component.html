@@ -1,4 +1,4 @@
-<button class="btn btn-outline-primary" routerLink="/share-information">Back</button>
+<button class="btn btn-outline-primary" [routerLink]="['/share-information']">Back</button>
 <div class="body-title">Consent of data collection and using</div>
 <app-information></app-information>
 <hr>
@@ -36,5 +36,5 @@
   <input type="checkbox" [(ngModel)]="theCheckbox"/> Agree to all of them
 </label><br/>
 <div class="but">
-  <button class="btn btn-outline-primary" [disabled]="none()" routerLink="/login-cic">Next</button>
+  <button class="btn btn-outline-primary" [disabled]="none()" [routerLink]="['/login-cic']">Next</button>
 </div>

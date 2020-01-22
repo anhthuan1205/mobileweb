@@ -1,5 +1,6 @@
 <div class="container">
   <div class="body-title">Target Institution</div>
+  <hr>
   <p>{{message}}</p>
   <div *ngFor="let item of banks">
     <input class="radio-but" type="radio" name="bank" [(ngModel)]="result.id" [value]="item.id">  {{ item.name }}
@@ -7,7 +8,7 @@
   <div *ngIf="!banks"><h3>Danh sách rỗng</h3></div>
   <br/>
   <div class="but">
-  <button class="btn btn-outline-primary" routerLink="/share-information">Next</button>
+  <button class="btn btn-outline-primary" [routerLink]="['/share-information']">Next</button>
   </div>
   <div>{{ onSubmit() | json}}
   </div>
